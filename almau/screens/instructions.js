@@ -10,6 +10,7 @@ import {
 
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import * as Actions from '../actions'; //Import your actions
 
@@ -22,6 +23,11 @@ class Home extends Component {
 
         this.renderItem = this.renderItem.bind(this);
     }
+
+    static navigationOptions = {
+        title: 'Instructions',
+        tabBarIcon: ({ tintColor }) => <Icon name={"book"} size={30} color={tintColor} />
+    };
 
     componentDidMount() {
         this.props.getData(); //call our action

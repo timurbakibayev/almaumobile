@@ -9,7 +9,7 @@ import {
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
+import Icon from "react-native-vector-icons/FontAwesome";
 import * as Actions from '../actions';
 import Slides from '../components/slides'
 
@@ -36,7 +36,8 @@ class Home extends Component {
             return {
                 right: <Text>Settings</Text>
             }
-        }
+        },
+        tabBarIcon: ({ tintColor }) => <Icon name={"graduation-cap"} size={30} color={tintColor} />
     };
 
     render() {
