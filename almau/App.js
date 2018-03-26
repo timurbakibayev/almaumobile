@@ -2,13 +2,21 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {StyleSheet, Text, View} from 'react-native';
 import store from './store';
-import Home from './components/home';
+import { TabNavigator } from 'react-navigation';
+
+import InstructionsScreen from './screens/instructions';
+import WelcomeScreen from './screens/welcome';
 
 export default class App extends React.Component {
     render() {
+        const MainNavigator = TabNavigator({
+            welcome: { screen: WelcomeScreen},
+            instructions: { screen: InstructionsScreen},
+        });
+
         return (
             <Provider store={store}>
-                <Home/>
+                <MainNavigator/>
             </Provider>
         );
     }
