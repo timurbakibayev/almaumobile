@@ -10,7 +10,14 @@ import {
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import * as Actions from '../actions'; //Import your actions
+import * as Actions from '../actions';
+import Slides from '../components/slides'
+
+const SLIDES_DATA = [
+    {text: "Welcome to AlmaU", color: '#03A9F4'},
+    {text: "This app is here to make your study better", color: '#009688'},
+    {text: "Start your journey now", color: '#03A9F4'},
+];
 
 class Home extends Component {
     constructor(props) {
@@ -23,10 +30,19 @@ class Home extends Component {
     componentDidMount() {
     }
 
+    static navigationOptions = {
+        title: 'Welcome',
+        header: ({ navigate }) => {
+            return {
+                right: <Text>Settings</Text>
+            }
+        }
+    };
+
     render() {
         return (
             <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20}}>
-                <Text>Welcome to AlmaU!</Text>
+                <Slides data={SLIDES_DATA} onComplete = {()=>{this.props.navigation.navigate('instructions')}}/>
             </View>
         );
     }

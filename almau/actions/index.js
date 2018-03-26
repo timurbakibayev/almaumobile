@@ -9,7 +9,7 @@ export function getData(){
         setTimeout(() => {
             const data  = Data.instructions;
             dispatch({type: DATA_AVAILABLE, data:data});
-        }, 2000);
+        }, 1000);
 
     };
 }
