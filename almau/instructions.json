@@ -2,7 +2,11 @@
   "instructions": [
     {
       "title": "Login",
-      "description": "Form: username,password. Action: http://almaunion.almau.edu.kz/login. Save cookies."
+      "description": "Form: username,password. Action: http://almaunion.almau.edu.kz/login. Save cookies!"
+    },
+    {
+      "title": "User info",
+      "description": "GET: http://almaunion.almau.edu.kz/tpl/header (userInfo.json)"
     },
     {
       "title": "Главная",
@@ -10,11 +14,11 @@
     },
     {
       "title": "Расписание",
-      "description": "http://almaunion.almau.edu.kz/schedule.html. GET: http://almaunion.almau.edu.kz/schedule/my"
+      "description": "GET: http://almaunion.almau.edu.kz/schedule/my"
     },
     {
       "title": "Дисциплины",
-      "description": "http://almaunion.almau.edu.kz/disciplines.html. GET: http://almaunion.almau.edu.kz/disciplines/all , 500 Internal Server Error"
+      "description": "GET: http://almaunion.almau.edu.kz/disciplines/all , 500 Internal Server Error"
     },
     {
       "title": "База знаний",
