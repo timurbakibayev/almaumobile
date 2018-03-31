@@ -1,0 +1,32 @@
+[
+  {
+    "id": 108,
+    "platonus_id": 466,
+    "is_student": false,
+    "name": "\u0410\u0441\u0441\u044b\u043b\u0431\u0435\u043a",
+    "surname": "\u041a\u043e\u0436\u0430\u0445\u043c\u0435\u0442\u043e\u0432",
+    "fullname": "\u041a\u043e\u0436\u0430\u0445\u043c\u0435\u0442\u043e\u0432 \u0410\u0441\u0441\u044b\u043b\u0431\u0435\u043a \u0411\u0430\u0437\u0430\u0440\u0431\u0430\u0435\u0432\u0438\u0447",
+    "email": "assylbeck@almau.edu.kz",
+    "photo": "\/img\/profile\/assylbeck\/VxweQgZi.jpeg",
+    "username": "assylbek",
+    "is_admin": false,
+    "super_admin": false,
+    "created_at": "2017-04-28 13:59:03",
+    "updated_at": "2018-03-30 03:12:54",
+    "cropped_photo": "\/img\/profile\/assylbeck\/VxweQgZi.jpeg",
+    "birthday": "1958-05-22 00:00:00",
+    "position": "\u0421\u043e\u0432\u0435\u0442\u043d\u0438\u043a \u0440\u0435\u043a\u0442\u043e\u0440\u0430",
+    "department": "\u0420\u0435\u043a\u0442\u043e\u0440\u0430\u0442"
+  },
+  {
+    "id": 38,
+    "user_id": 108,
+    "title": "assylbek@almau.edu.kz",
+    "status": 1,
+    "created_at": "2017-08-01 11:26:21",
+    "updated_at": "2017-08-01 11:31:08",
+    "office_phone": "+7(727) 313-30-70 \u0432\u043d.(777)",
+    "cell_number": "+7(777) 210-03-58",
+    "room_number": null
+  }
+]

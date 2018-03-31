@@ -15,6 +15,7 @@ class Slides extends Component {
                 {this.props.data.map((slide, index) => (
                         <View key={slide.text} style={[styles.slide, {backgroundColor: slide.color}]}>
                             <Text style={styles.slideText}>{slide.text}</Text>
+                            <Text/>
                             {index === this.props.data.length - 1 && <Button
                                 title = "Начать"
                                 raised
@@ -36,14 +37,13 @@ const styles = {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        width: SCREEN_WIDTH,
+        width: SCREEN_WIDTH-5,
     },
     slideText: {
         fontSize: 30,
     },
     button: {
         backgroundColor: '#0288D1',
-        marginTop: 15,
     }
 }
 

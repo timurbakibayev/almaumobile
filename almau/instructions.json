@@ -1,40 +1,40 @@
 {
   "instructions": [
     {
-      "title": "Create React Native Project",
-      "description": "react-native init ReactReduxBoilerPlate"
+      "title": "Login",
+      "description": "Form: username,password. Action: http://almaunion.almau.edu.kz/login. Save cookies."
     },
     {
-      "title": "Install Dependencies",
-      "description": "In your project root, run npm install --save react-redux \nnpm install —save redux \nnpm install —save redux-thunk"
+      "title": "Главная",
+      "description": "http://almaunion.almau.edu.kz/home.html. AlmaUnion- портал управления знаниями. "
     },
     {
-      "title": "Create Folder Structure",
-      "description": "In your project root create an 'app' folder. In the app folder create an 'actions' folder , a 'reducers' folder and a 'components' folder."
+      "title": "Расписание",
+      "description": "http://almaunion.almau.edu.kz/schedule.html. GET: http://almaunion.almau.edu.kz/schedule/my"
     },
     {
-      "title": "Create your first action",
-      "description": "The action is a basic function called from the component whenever we want the whole state of the app to be changed. Our action creator is a simple function returning an object (the action itself)with a type attribute expressing what happened with the app.\nIn your actions folder create a js file 'index.js'"
+      "title": "Дисциплины",
+      "description": "http://almaunion.almau.edu.kz/disciplines.html. GET: http://almaunion.almau.edu.kz/disciplines/all , 500 Internal Server Error"
     },
     {
-      "title": "Create your first reducer",
-      "description": "Reducers are the ones in charge of updating the state of the app. Redux will automatically pass the current state of the app and the action occurred. It’s up to the reducer to realize if it needs to modify the state or not based on the action.type.\nIn your reducers folder create a js file 'index.js'"
+      "title": "База знаний",
+      "description": "GET: http://almaunion.almau.edu.kz/database/display?scroll_from=0 , 20 on page. Result sample in database.json file."
     },
     {
-      "title": "Create your component",
-      "description": "In your components folder create a js file 'home.js'"
+      "title": "Орг. структура",
+      "description": "1. http://almaunion.almau.edu.kz/structure/getParentDepartments (example in getPD.json). 2. http://almaunion.almau.edu.kz/structure/getDepartmentUsers/department_Name (getDPUsers.json) 3. http://almaunion.almau.edu.kz/structure/getChildDepartments/department_name (GetChildDP.json)"
     },
     {
-      "title": "Create Store",
-      "description": "In the app folder, create a js file 'store.js'"
+      "title": "Контакт - карточка",
+      "description": "http://almaunion.almau.edu.kz/structure/getContacts/assylbek (contact.json)"
     },
     {
-      "title": "Link it all together",
-      "description": "Redux needs to inject a store holding the app state into the app. To do so, it requires a ‘Provider’ wrapping the whole app.In the app folder, create a js file 'setup.js'"
+      "title": "Новости",
+      "description": "http://almaunion.almau.edu.kz/news/allNews?page=1 (news.json) http://almaunion.almau.edu.kz/news/show/82  (news82.json)"
     },
     {
-      "title": "Update your main files",
-      "description": "Update index.ios.js and index.android.js"
+      "title": "Омбудсмен",
+      "description": "HTML Div: http://almaunion.almau.edu.kz/ombudsmen"
     }
   ]
 }

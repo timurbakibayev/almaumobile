@@ -8,7 +8,7 @@ import { StackNavigator } from 'react-navigation';
 import InstructionsScreen from './screens/instructions';
 import WelcomeScreen from './screens/welcome';
 
-import DrawerLeft from './components/drawerLeft';
+import MainMenu from './components/mainMenu';
 
 
 export default class App extends React.Component {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
         return (
             <Provider store={store}>
-                <DrawerLeft window={<MainNavigator/>}/>
+                <MainMenu window={<MainNavigator/>}/>
             </Provider>
         );
     }
