@@ -13,12 +13,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import * as Actions from '../actions';
 import Slides from '../components/slides'
 
-const SLIDES_DATA = [
-    {text: "Меню пользователя выдвигается слева", color: '#009688'},
-    {text: "Для начала работы необходимо авторизоваться", color: '#03A9F4'},
-];
-
-class Home extends Component {
+class Authenticate extends Component {
     constructor(props) {
         super(props);
 
@@ -37,8 +32,8 @@ class Home extends Component {
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20}}>
-                <Slides data={SLIDES_DATA} onComplete = {()=>{this.props.navigation.navigate('authenticate')}}/>
+            <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20, justifyContent: "center", alignItems: "center"}}>
+                <Text>Авторизация</Text>
             </View>
         );
     }
@@ -55,7 +50,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Authenticate);
 
 const styles = StyleSheet.create({
     activityIndicatorContainer: {
