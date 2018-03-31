@@ -25,8 +25,7 @@ class Authenticate extends Component {
     }
 
     static navigationOptions = {
-        title: 'Welcome',
-        header: null,
+        title: 'Авторизация',
         //tabBarIcon: ({ tintColor }) => <Icon name={"graduation-cap"} size={30} color={tintColor} />
     };
 
