@@ -2,41 +2,46 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {StyleSheet, Text, View} from 'react-native';
 import store from './store';
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import Drawer from 'react-native-drawer'
 
 import InstructionsScreen from './screens/instructions';
 import WelcomeScreen from './screens/welcome';
+import DrawerContent from './components/drawerContent';
+
+let drawer = null;
 
 export default class App extends React.Component {
     render() {
-        const MainNavigator = TabNavigator({
+        const MainNavigator = StackNavigator({
             welcome: { screen: WelcomeScreen},
             instructions: { screen: InstructionsScreen},
         });
-
-        closeControlPanel = () => {
-            this._drawer.close()
-        };
-        openControlPanel = () => {
-            this._drawer.open()
+        let closeDrawer = () => {
+            //this._drawer.close()
+            //this.context.drawer.close()
+            drawer.close()
         };
 
         return (
             <Provider store={store}>
                 <Drawer
+                    ref={(ref) => drawer = ref}
                     type="overlay"
-                    content={<ControlPanel />}
+                    content={(
+                        <DrawerContent closeDrawer={closeDrawer}/>
+                    )}
                     tapToClose={true}
-                    openDrawerOffset={0.2} // 20% gap on the right side of drawer
+                    panOpenMask={0.1}
+                    openDrawerOffset={0.4}
                     panCloseMask={0.2}
-                    closedDrawerOffset={-3}
+                    closedDrawerOffset={3}
                     styles={drawerStyles}
                     tweenHandler={(ratio) => ({
                         main: { opacity:(2-ratio)/2 }
                     })}
                 >
-                    <WelcomeScreen />
+                    <Text/>
                 </Drawer>
             </Provider>
         );
