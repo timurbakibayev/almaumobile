@@ -10,37 +10,46 @@ import {
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
+import Drawer from 'react-native-drawer'
 import * as Actions from '../actions';
 import Slides from '../components/slides'
+import DrawerContent from './drawerContent';
 
-const SLIDES_DATA = [
-    {text: "Welcome to AlmaU", color: '#03A9F4'},
-    {text: "This app is here to make your study better", color: '#009688'},
-    {text: "Start your journey now", color: '#03A9F4'},
-];
+let drawer = null;
 
-class Home extends Component {
+class DrawerLeft extends Component {
     constructor(props) {
         super(props);
-
         this.state = {};
-
     }
+
+    closeDrawer = () => {
+        drawer.close()
+    };
 
     componentDidMount() {
     }
 
-    static navigationOptions = {
-        title: 'Welcome',
-        header: null,
-        //tabBarIcon: ({ tintColor }) => <Icon name={"graduation-cap"} size={30} color={tintColor} />
-    };
-
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20}}>
-                <Slides data={SLIDES_DATA} onComplete = {()=>{this.props.navigation.navigate('instructions')}}/>
-            </View>
+            <Drawer
+                ref={(ref) => drawer = ref}
+                type="overlay"
+                content={(
+                    <DrawerContent closeDrawer={this.closeDrawer}/>
+                )}
+                tapToClose={true}
+                panOpenMask={0.1}
+                openDrawerOffset={0.4}
+                panCloseMask={0.2}
+                closedDrawerOffset={3}
+                styles={drawerStyles}
+                tweenHandler={(ratio) => ({
+                    main: { opacity:(2-ratio)/2 }
+                })}
+            >
+                {this.props.window}
+            </Drawer>
         );
     }
 
@@ -56,7 +65,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(DrawerLeft);
 
 const styles = StyleSheet.create({
     activityIndicatorContainer: {
@@ -82,3 +91,9 @@ const styles = StyleSheet.create({
         fontSize: 14,
     }
 });
+
+
+const drawerStyles = {
+    drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
+    main: {paddingLeft: 3},
+}
