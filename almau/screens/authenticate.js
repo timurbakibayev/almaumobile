@@ -4,21 +4,32 @@ import {
     FlatList,
     View,
     Text,
-    ActivityIndicator
+    TextInput,
+    ActivityIndicator,
+    Dimensions,
 } from 'react-native';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import Icon from "react-native-vector-icons/FontAwesome";
 import * as Actions from '../actions';
 import Slides from '../components/slides'
 
+import {loginUser} from "../api/authentication";
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').width;
+
+
 class Authenticate extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {};
-
+        this.state = {
+            username:"",
+            password:"",
+        };
+        self = this;
     }
 
     componentDidMount() {
@@ -31,12 +42,24 @@ class Authenticate extends Component {
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20, justifyContent: "center", alignItems: "center"}}>
-                <Text>Авторизация</Text>
+            <View style={{flex: 1, backgroundColor: '#2196f3', paddingTop: SCREEN_HEIGHT/10, alignItems: "center"}}>
+                <Text style={{color: "white", fontSize: 18}}>Имя пользователя</Text>
+                <TextInput returnKeyType = {"next"} style={{color: "white", height: 40, width: SCREEN_WIDTH*2/3, borderColor: 'gray', borderWidth: 1}}
+                           onChangeText={(e)=>{this.setState({username: e})}}
+                           onSubmitEditing={() => this.passwordInput.focus()}/>
+                <Text></Text>
+                <Text style={{color: "white", fontSize: 18}}>Пароль</Text>
+                <TextInput secureTextEntry style={{color: "white", height: 40, width: SCREEN_WIDTH*2/3, borderColor: 'gray', borderWidth: 1}}
+                           onChangeText={(e)=>{this.setState({password: e})}}
+                           onSubmitEditing = {()=>{
+                               console.log("Submitting");
+                               loginUser(this.state);
+                           }}
+                           returnKeyType = "go"
+                           ref={(input)=>this.passwordInput = input}/>
             </View>
         );
     }
-
 }
 
 
