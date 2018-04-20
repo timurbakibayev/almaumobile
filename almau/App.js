@@ -7,6 +7,7 @@ import { StackNavigator } from 'react-navigation';
 
 import InstructionsScreen from './screens/instructions';
 import AuthenticateScreen from './screens/authenticate';
+import NotImplementedScreen from './screens/notImplemented';
 import WelcomeScreen from './screens/welcome';
 
 import MainMenu from './components/mainMenu';
@@ -18,11 +19,12 @@ export default class App extends React.Component {
             welcome: { screen: WelcomeScreen},
             instructions: { screen: InstructionsScreen},
             authenticate: { screen: AuthenticateScreen},
+            news: { screen: NotImplementedScreen},
         });
 
         return (
             <Provider store={store}>
-                <MainMenu window={<MainNavigator/>}/>
+                <MainMenu window={<MainNavigator/>} mainNavi={MainNavigator}/>
             </Provider>
         );
     }

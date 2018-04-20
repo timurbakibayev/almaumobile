@@ -23,14 +23,15 @@ class DrawerContent extends Component {
 
     componentDidMount() {
     }
-    //this.props.closeDrawer()
 
     render() {
         return (
             <View style={styles}>
                 <TouchableHighlight onPress={()=>{
-                    this.props.closeDrawer();
+                    //this.props.closeDrawer();
                     //this.setState({text:"111"});
+                    //this.props.navigation.navigate('instructions')
+                    console.log(this.props.mainNavi);
                 }}><Text>{this.state.text}</Text></TouchableHighlight>
             </View>
         );
@@ -41,7 +42,7 @@ class DrawerContent extends Component {
 
 styles = {
     height: Dimensions.get('window').height,
-    backgroundColor: '#00ff00',
+    backgroundColor: '#ffffff',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
