@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavigationActions} from 'react-navigation';
 import {
     StyleSheet,
     FlatList,
@@ -16,6 +17,14 @@ import * as Actions from '../actions';
 import Slides from '../components/slides'
 
 class DrawerContent extends Component {
+
+    navigateToScreen = (route) => () => {
+        const navigateAction = NavigationActions.navigate({
+            routeName: route
+        });
+        this.props.navigation.dispatch(navigateAction);
+    };
+
     constructor(props) {
         super(props);
         this.state = {text:"Content of a drawer"};
@@ -23,22 +32,21 @@ class DrawerContent extends Component {
 
     componentDidMount() {
     }
-
     render() {
+        console.log(this.props);
         return (
             <View style={styles}>
                 <TouchableHighlight onPress={()=>{
                     //this.props.closeDrawer();
                     //this.setState({text:"111"});
                     //this.props.navigation.navigate('instructions')
-                    console.log(this.props.mainNavi);
+                    this.navigateToScreen('instructions');
                 }}><Text>{this.state.text}</Text></TouchableHighlight>
             </View>
         );
     }
 
 }
-
 
 styles = {
     height: Dimensions.get('window').height,

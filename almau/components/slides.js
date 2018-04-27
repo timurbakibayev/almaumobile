@@ -49,7 +49,7 @@ const styles = {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        width: SCREEN_WIDTH-5,
+        width: SCREEN_WIDTH,
     },
     slideText: {
         fontSize: 30,

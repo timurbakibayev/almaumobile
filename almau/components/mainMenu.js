@@ -36,7 +36,7 @@ class DrawerLeft extends Component {
                 ref={(ref) => drawer = ref}
                 type="overlay"
                 content={(
-                    <DrawerContent closeDrawer={this.closeDrawer} mainNavi={this.props.mainNavi}/>
+                    <DrawerContent closeDrawer={this.closeDrawer} window = {this.props.window} mainNavi={this.props.mainNavi}/>
                 )}
                 tapToClose={true}
                 panOpenMask={0.1}
