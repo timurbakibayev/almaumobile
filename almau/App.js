@@ -22,7 +22,7 @@ export default class App extends React.Component {
             authenticate: { screen: AuthenticateScreen},
             news: { screen: NotImplementedScreen},
         }, {
-            contentComponent: DrawerContent
+            contentComponent: DrawerContent,
         });
 
         return (

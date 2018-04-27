@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {NavigationActions} from 'react-navigation';
+import {URL} from '../api/url';
 import {
     StyleSheet,
     FlatList,
     View,
     Text,
+    Image,
     ActivityIndicator,
     TouchableHighlight,
     Dimensions,
@@ -13,8 +15,8 @@ import {
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Icon from "react-native-vector-icons/FontAwesome";
-import * as Actions from '../actions';
-import Slides from '../components/slides'
+import Slides from '../components/slides';
+import * as Actions from '../actions/userInfo';
 
 class DrawerContent extends Component {
 
@@ -27,21 +29,54 @@ class DrawerContent extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {text:"Content of a drawer"};
+        this.state = {text: "Content of a drawer"};
     }
 
     componentDidMount() {
+        this.props.load();
     }
+
     render() {
-        console.log(this.props);
+        //console.log(this.props);
+        const photoUrl = `${URL}${this.props.userInfo.photo}`;
+        let userRole = this.props.userInfo.role?this.props.userInfo.role:"";
+        userRole = userRole.replace("teacher","Преподаватель");
         return (
-            <View style={styles}>
-                <TouchableHighlight onPress={()=>{
-                    //this.props.closeDrawer();
-                    //this.setState({text:"111"});
-                    //this.props.navigation.navigate('instructions')
-                    this.navigateToScreen('instructions');
-                }}><Text>{this.state.text}</Text></TouchableHighlight>
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <View style={styles.photo}>
+                        <View style={{
+                            borderRadius: Dimensions.get('window').height / 14,
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "green",
+                            overflow: "hidden",
+                        }}>
+                            <Image
+
+                                style={{
+                                    flex: 1,
+                                    width: "100%",
+                                    height: "100%",
+                                    resizeMode: "cover",
+                                }}
+                                source={{uri: photoUrl}}
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.inHeader3}>
+                        <Text style={styles.headerText}>{this.props.userInfo?this.props.userInfo.fullname:"Loading..."}</Text>
+                        <Text style={styles.headerText}>{userRole}</Text>
+                    </View>
+                </View>
+                <View style={styles.menu}>
+                    <TouchableHighlight style={styles.menuItem} onPress={() => {
+                        this.props.navigation.navigate('news');
+                    }}><Text style={styles.menuItemText}>Новости</Text></TouchableHighlight>
+                    <TouchableHighlight style={styles.menuItem} onPress={() => {
+                        this.props.navigation.navigate('instructions');
+                    }}><Text style={styles.menuItemText}>{this.state.text}</Text></TouchableHighlight>
+                </View>
             </View>
         );
     }
@@ -49,16 +84,64 @@ class DrawerContent extends Component {
 }
 
 styles = {
-    height: Dimensions.get('window').height,
-    backgroundColor: '#ffffff',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    container: {
+        height: Dimensions.get('window').height,
+        backgroundColor: '#ffffff',
+        flex: 1,
+        flexDirection: "column",
+        alignItems: 'center',
+    },
+    header: {
+        height: Dimensions.get('window').height / 3,
+        width: "100%",
+        backgroundColor: "#ff4466",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "1%",
+    },
+    photo: {
+        width: Dimensions.get('window').height / 7,
+        height: Dimensions.get('window').height / 7,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    inHeader3: {
+        flex: 1,
+        height: "100%",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: '300',
+        paddingTop: 20,
+        color: "white",
+        textAlign: "center",
+        margin: 20,
+    },
+    menuItem: {
+        margin: 10,
+    },
+    menuItemText: {
+        fontSize: 17,
+        color: "black",
+        textAlign: "left",
+    },
+    menu: {
+        height: Dimensions.get('window').height * 2 / 3,
+        width: "100%",
+        backgroundColor: "#fefefe",
+        flexDirection: "column",
+        padding: "3%",
+    },
 };
 
-
 function mapStateToProps(state, props) {
-    return {}
+    return {
+        userInfo: state.userInfoReducer,
+    }
 }
 
 function mapDispatchToProps(dispatch) {

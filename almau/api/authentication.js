@@ -43,7 +43,7 @@ export async function loginUser(creds) {
     //console.log(response["set-cookie"]);
 
     response = await fetch(
-        `${URL}login`,
+        `${URL}/login`,
         {
             method: 'POST',
             headers: {
@@ -61,7 +61,7 @@ export async function loginUser(creds) {
     //console.log("Text",text2);
 
     response = await fetch(
-        `${URL}users/info`,
+        `${URL}/users/info`,
         {
             method: 'GET',
             headers: {
@@ -80,7 +80,7 @@ export async function loginUser(creds) {
 
 export function userDetail(creds, token) {
     return fetch(
-        `${URL}api/user_by_name/${creds.username}/`,
+        `${URL}/api/user_by_name/${creds.username}/`,
         {
             method: 'GET',
             headers: {
