@@ -10,17 +10,51 @@ import InstructionsScreen from './screens/instructions';
 import AuthenticateScreen from './screens/authenticate';
 import NotImplementedScreen from './screens/notImplemented';
 import WelcomeScreen from './screens/welcome';
+import NewsScreen from './screens/news';
+import DatabaseScreen from './screens/database';
 
 import MainMenu from './components/mainMenu';
 
 
 export default class App extends React.Component {
     render() {
+        const NewsScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: NewsScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'news',
+                    headerMode: 'screen',
+                    headerTitle: 'Новости',
+                    drawerLabel: 'Новости',
+                }),
+            }
+        );
+
+        const DBScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: DatabaseScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'database',
+                    headerMode: 'screen',
+                    headerTitle: 'База знаний',
+                }),
+            }
+        );
+
         const MainNavigator = DrawerNavigator({
             welcome: { screen: WelcomeScreen},
             instructions: { screen: InstructionsScreen},
             authenticate: { screen: AuthenticateScreen},
-            news: { screen: NotImplementedScreen},
+            news: { screen: NewsScreenStack},
+            database: { screen: DBScreenStack},
         }, {
             contentComponent: DrawerContent,
         });

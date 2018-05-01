@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import { DATA_AVAILABLE } from "../actions/" //Import the actions types constant we defined in our actions
-import { USER_INFO_LOADED } from "../actions/userInfo" //Import the actions types constant we defined in our actions
+import { DATA_AVAILABLE } from "../actions/"
+import { USER_INFO_LOADED } from "../actions/userInfo"
+import { NEWS_LOADED } from "../actions/news"
+import { DB_LOADED } from "../actions/database"
 
 let dataState = { data: [], loading:true };
 
@@ -25,12 +27,33 @@ const userInfoReducer = (state = {fullname: "Loading..."}, action) => {
     }
 };
 
+const newsReducer = (state = [], action) => {
+    switch (action.type) {
+        case NEWS_LOADED:
+            // console.log(NEWS_LOADED, action.data);
+            return action.data;
+        default:
+            return state;
+    }
+};
+
+const dbReducer = (state = [], action) => {
+    switch (action.type) {
+        case DB_LOADED:
+            // console.log(DB_LOADED, action.data);
+            return action.data;
+        default:
+            return state;
+    }
+};
+
 
 // Combine all the reducers
 const rootReducer = combineReducers({
     dataReducer,
     userInfoReducer,
-    // ,[ANOTHER REDUCER], [ANOTHER REDUCER] ....
-})
+    newsReducer,
+    dbReducer,
+});
 
 export default rootReducer;

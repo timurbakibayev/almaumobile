@@ -77,17 +77,17 @@ export async function loginUser(creds) {
     console.log("Status info",response.status); //405 = broken
     console.log("Text",text3);
 }
-
-export function userDetail(creds, token) {
-    return fetch(
-        `${URL}/api/user_by_name/${creds.username}/`,
-        {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `JWT ${ token }`
-            }
-        }
-    )
-}
+//
+// export function userDetail(creds, token) {
+//     return fetch(
+//         `${URL}/api/user_by_name/${creds.username}/`,
+//         {
+//             method: 'GET',
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `JWT ${ token }`
+//             }
+//         }
+//     )
+// }

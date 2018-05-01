@@ -74,6 +74,9 @@ class DrawerContent extends Component {
                         this.props.navigation.navigate('news');
                     }}><Text style={styles.menuItemText}>Новости</Text></TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
+                        this.props.navigation.navigate('database');
+                    }}><Text style={styles.menuItemText}>База знаний</Text></TouchableHighlight>
+                    <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('instructions');
                     }}><Text style={styles.menuItemText}>{this.state.text}</Text></TouchableHighlight>
                 </View>
