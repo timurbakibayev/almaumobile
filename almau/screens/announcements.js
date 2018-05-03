@@ -17,14 +17,14 @@ import {connect} from 'react-redux';
 import HTMLView from 'react-native-htmlview';
 
 import Icon from "react-native-vector-icons/FontAwesome";
-import * as Actions from '../actions/news';
+import * as Actions from '../actions/announcements';
 import Slides from '../components/slides';
 import {URL} from '../api/url';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 
-class News extends Component {
+class Announcements extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,10 +37,10 @@ class News extends Component {
     }
 
     static navigationOptions = {
-        title: 'Новости',
+        title: 'Объявления',
     };
 
-    renderSingleNews({item, index}) {
+    renderSingleAnnouncement({item, index}) {
         return (
             <View style={{
                 borderBottomWidth: 1,
@@ -84,16 +84,15 @@ class News extends Component {
 
 
     render() {
-        // console.log("News:", this.props.news);
         return (
-            this.props.news.data ? (<View
+            this.props.announcements.data ? (<View
                     style={{flex: 1, backgroundColor: '#FAFAFA', paddingTop: 0, alignItems: "center"}}>
                     <FlatList
                         containerStyle={{margin: 0, padding: 0}}
                         style={{width: SCREEN_WIDTH}}
                         ref='listRef'
-                        data={this.props.news.data}
-                        renderItem={this.renderSingleNews.bind(this)}
+                        data={this.props.announcements.data}
+                        renderItem={this.renderSingleAnnouncement.bind(this)}
                         keyExtractor={(item, index) => item.id}/>
                 </View>)
                 : <View style={styles.activityIndicatorContainer}>
@@ -106,7 +105,7 @@ class News extends Component {
 
 function mapStateToProps(state, props) {
     return {
-        news: state.newsReducer,
+        announcements: state.announcementsReducer,
     }
 }
 
@@ -115,7 +114,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(News);
+export default connect(mapStateToProps, mapDispatchToProps)(Announcements);
 
 const styles = StyleSheet.create({
     activityIndicatorContainer: {

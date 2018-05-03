@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import { DATA_AVAILABLE } from "../actions/"
 import { USER_INFO_LOADED } from "../actions/userInfo"
 import { NEWS_LOADED } from "../actions/news"
+import { ANNOUNCEMENTS_LOADED } from "../actions/announcements"
 import { DB_LOADED } from "../actions/database"
 
 let dataState = { data: [], loading:true };
@@ -30,7 +31,15 @@ const userInfoReducer = (state = {fullname: "Loading..."}, action) => {
 const newsReducer = (state = [], action) => {
     switch (action.type) {
         case NEWS_LOADED:
-            // console.log(NEWS_LOADED, action.data);
+            return action.data;
+        default:
+            return state;
+    }
+};
+
+const announcementsReducer = (state = [], action) => {
+    switch (action.type) {
+        case ANNOUNCEMENTS_LOADED:
             return action.data;
         default:
             return state;
@@ -53,6 +62,7 @@ const rootReducer = combineReducers({
     dataReducer,
     userInfoReducer,
     newsReducer,
+    announcementsReducer,
     dbReducer,
 });
 

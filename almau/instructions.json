@@ -37,6 +37,10 @@
       "description": "http://almaunion.almau.edu.kz/news/allNews?page=1 (news.json) http://almaunion.almau.edu.kz/news/show/82  (news82.json)"
     },
     {
+      "title": "Объявления",
+      "description": "http://almaunion.almau.edu.kz/announcements/allAnnouncements?page=1 (announcements.json) The structure is exactly as in news.json"
+    },
+    {
       "title": "Омбудсмен",
       "description": "HTML Div: http://almaunion.almau.edu.kz/ombudsmen"
     }

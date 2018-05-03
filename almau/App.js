@@ -11,7 +11,9 @@ import AuthenticateScreen from './screens/authenticate';
 import NotImplementedScreen from './screens/notImplemented';
 import WelcomeScreen from './screens/welcome';
 import NewsScreen from './screens/news';
+import AnnouncementsScreen from './screens/announcements';
 import DatabaseScreen from './screens/database';
+import OmbudsmanScreen from './screens/ombudsman';
 
 import MainMenu from './components/mainMenu';
 
@@ -29,7 +31,21 @@ export default class App extends React.Component {
                     initialRouteName: 'news',
                     headerMode: 'screen',
                     headerTitle: 'Новости',
-                    drawerLabel: 'Новости',
+                }),
+            }
+        );
+
+        const AnnouncementsScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: AnnouncementsScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'news',
+                    headerMode: 'screen',
+                    headerTitle: 'Объявления',
                 }),
             }
         );
@@ -49,12 +65,29 @@ export default class App extends React.Component {
             }
         );
 
+        const OmbudsmanScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: OmbudsmanScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'ombudsman',
+                    headerMode: 'screen',
+                    headerTitle: 'Омбудсмен AlmaU',
+                }),
+            }
+        );
+
         const MainNavigator = DrawerNavigator({
             welcome: { screen: WelcomeScreen},
             instructions: { screen: InstructionsScreen},
             authenticate: { screen: AuthenticateScreen},
             news: { screen: NewsScreenStack},
+            announcements: { screen: AnnouncementsScreenStack},
             database: { screen: DBScreenStack},
+            ombudsman: { screen: OmbudsmanScreenStack},
         }, {
             contentComponent: DrawerContent,
         });
