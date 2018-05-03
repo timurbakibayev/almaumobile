@@ -72,19 +72,40 @@ class DrawerContent extends Component {
                 <View style={styles.menu}>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('news');
-                    }}><Text style={styles.menuItemText}>Новости</Text></TouchableHighlight>
+                    }}>
+                        <View style={{flexDirection:"row"}}>
+                            <Icon style={styles.menuItemText} name="feed" /><Text style={styles.menuItemText}>Новости</Text>
+                        </View>
+                    </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('announcements');
-                    }}><Text style={styles.menuItemText}>Объявления</Text></TouchableHighlight>
+                    }}>
+                        <View style={{flexDirection:"row"}}>
+                            <Icon style={styles.menuItemText} name="newspaper-o" /><Text style={styles.menuItemText}>Объявления</Text>
+                        </View>
+                    </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('database');
-                    }}><Text style={styles.menuItemText}>База знаний</Text></TouchableHighlight>
+                    }}>
+                        <View style={{flexDirection:"row"}}>
+                            <Icon style={styles.menuItemText} name="eercast" /><Text style={styles.menuItemText}>База знаний</Text>
+                        </View>
+
+                    </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('ombudsman');
-                    }}><Text style={styles.menuItemText}>Омбудсмен</Text></TouchableHighlight>
+                    }}>
+                        <View style={{flexDirection:"row"}}>
+                            <Icon style={styles.menuItemText} name="handshake-o" /><Text style={styles.menuItemText}>Омбудсмен</Text>
+                        </View>
+                    </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('instructions');
-                    }}><Text style={styles.menuItemText}>{this.state.text}</Text></TouchableHighlight>
+                    }}>
+                        <View style={{flexDirection:"row"}}>
+                            <Icon style={styles.menuItemText} name="rocket" /><Text style={styles.menuItemText}>API</Text>
+                        </View>
+                    </TouchableHighlight>
                 </View>
             </View>
         );
@@ -137,6 +158,7 @@ styles = {
         fontSize: 17,
         color: "black",
         textAlign: "left",
+        marginRight: 10,
     },
     menu: {
         height: Dimensions.get('window').height * 2 / 3,
