@@ -88,20 +88,24 @@ class News extends Component {
     render() {
         // console.log("News:", this.props.news);
         return (
-            <ScrollView>
+            <ScrollView
+                style={{paddingLeft: 10, paddingRight: 10, paddingBottom: 20, marginBottom: 40}}
+            >
+                <Text style={styles.title}></Text>
                 <Text style={styles.title}>Алталиева Акмарал Андировна</Text>
                 <Text style={styles.title}></Text>
                 <Image
-                    style={{width: SCREEN_WIDTH, height: SCREEN_WIDTH}}
+                    resizeMode="center"
+                    style={{width: SCREEN_WIDTH/1.7, height: SCREEN_WIDTH/1.3, borderRadius: 70, margin: "auto", alignSelf: "center"}}
                     source={{uri: URL+"/img/ombudsmen/1.jpg"}}
                 />
                 <Text style={styles.title}></Text>
                 <HTMLView
                           value={"" +
                           "Для того, чтобы написать обращение к омбудсмену, необходимо заполнить форму ниже" +
-                          "" +
-                          "<h3><a href='https://goo.gl/forms/8qmMSU5NkC85ZuVv2'>Для преподавателей</a></h3>" +
-                          "<h3><a href='https://goo.gl/forms/3BKgki3NSgnIe6jK2'>Для обучающихся</a></h3>"}
+                          "<h4> </h4>" +
+                          "<h4><a href='https://goo.gl/forms/8qmMSU5NkC85ZuVv2'>Для преподавателей</a></h4>" +
+                          "<h4><a href='https://goo.gl/forms/3BKgki3NSgnIe6jK2'>Для обучающихся</a></h4>"}
                 />
                 <Text style={styles.title}></Text>
                 <Text style={styles.title}>Положение об Омбудсмене</Text>
@@ -172,7 +176,7 @@ class News extends Component {
                     12. В случае принятия Советом попечителей УО решения о прекращении полномочий действующего Омбудсмена без назначения нового Омбудсмена, Омбудсменом, полномочия которого прекращены, документы передаются по акту Секретарю Совета попечителей для последующей передачи вновь назначенному Омбудсмену.
                 </Text>
                 <Text style={styles.title}></Text>
-                <Text style={styles.title}>3. ЗАДАЧИ ОМБУДСМЕНА</Text>
+                <Text style={styles.title}>3. Задачи омбудсмена</Text>
                 <Text style={styles.title}></Text>
                 <Text style={styles.generalText}>
                     13. Задачами Омбудсмена в рамках его деятельности являются:
@@ -185,7 +189,7 @@ class News extends Component {
                 </Text>
 
                 <Text style={styles.title}></Text>
-                <Text style={styles.title}>4. ФУНКЦИИ ОМБУДСМЕНА</Text>
+                <Text style={styles.title}>4. Функции омбудсмена</Text>
                 <Text style={styles.title}></Text>
                 <Text style={styles.generalText}>
                 </Text><Text style={styles.generalText}>
@@ -248,7 +252,7 @@ class News extends Component {
                 </Text>
 
                 <Text style={styles.title}></Text>
-                <Text style={styles.title}>6. ПРАВА И ОБЯЗАННОСТИ ОМБУДСМЕНА</Text>
+                <Text style={styles.title}>5. Права и обязанности омбудсмена</Text>
                 <Text style={styles.title}></Text>
                 <Text style={styles.generalText}>
                 </Text><Text style={styles.generalText}>
@@ -272,7 +276,7 @@ class News extends Component {
                 3) 2 раза в год отчитываться перед коллективом и руководством УО о проделанной работе, предоставлять Попечительскому Совету информацию о деятельности Омбудсмена к каждому заседанию.            </Text><Text style={styles.generalText}>
             </Text>
                 <Text style={styles.title}></Text>
-                <Text style={styles.title}>7. ОТВЕТСТВЕННОСТЬ ОМБУДСМЕНА</Text>
+                <Text style={styles.title}>6. Ответственность омбудсмена</Text>
                 <Text style={styles.title}></Text>
                 <Text style={styles.generalText}>
                 </Text><Text style={styles.generalText}>

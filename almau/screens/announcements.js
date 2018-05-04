@@ -4,6 +4,8 @@ import {
     FlatList,
     View,
     Text,
+    ScrollView,
+    Image,
     TextInput,
     ActivityIndicator,
     Dimensions,
@@ -42,43 +44,53 @@ class Announcements extends Component {
 
     renderSingleAnnouncement({item, index}) {
         return (
-            <View style={{
-                borderBottomWidth: 1,
-                borderColor: "#ccc",
-                paddingLeft: 1,
-                paddingRight: 5,
-                paddingTop: 10,
-                paddingBottom: 10,
-                overflow: "hidden",
-            }}>
+            <Card key={index}
+                  style={{flexDirection: "column", flex: 1, left: 1, overflow: "hidden"}}
+            >
                 <TouchableHighlight onPress={() => {
                     let expanded = this.state.expanded;
                     expanded["" + index] = true; //!this.state.expanded["" + index];
                     this.setState({expanded: expanded});
-                }
-                }>
-                    <View style={{
-                        borderLeftWidth: 5,
-                        borderLeftColor: item.color,
-                    }}
-                    >
-                        <Text style={styles.title}>{item.title}</Text>
-                        <Text style={styles.date}>{item.date}</Text>
-                        <Text style={styles.title}></Text>
-                        {item.files!==null && item.files.map((file) => {
-                            return (
-                                <HTMLView key={file.name}
-                                    value={"<a href='"+URL+"/"+file.path+"'>"+file.name+"</a>"}
-                                />
-                            )
-                        })}
-                        <HTMLView
-                            value={this.state.expanded["" + index] ? item.content : item.short_content}
-                            stylesheet={styles}
-                        />
-                    </View>
+                }}>
+                    <Text style={styles.title}>{item.title}</Text>
                 </TouchableHighlight>
-            </View>
+                <Text style={styles.date}>{item.date}</Text>
+                <Text style={styles.title}></Text>
+                <ScrollView
+                    horizontal
+                >
+                    {item.files!==null && item.files.map((file) => {
+                        let re = /(?:\.([^.]+))?$/;
+                        let ext = re.exec(file.path)[1];
+                        if (["jpeg","jpg","png"].includes(ext))
+                            return (
+                                <Image key={file.path}
+                                       resizeMode="contain"
+                                       style={{flex: 1, width: SCREEN_WIDTH/1.2, height: 200}}
+                                       source={{uri: URL+"/"+file.path}}
+                                ></Image>
+                            );
+                        return (
+                            <HTMLView key={file.name}
+                                      value={"<a href='"+URL+"/"+file.path+"'>"+file.name+"</a>"}
+                            />
+                        )
+                    })}
+                </ScrollView>
+                <HTMLView
+                    value={this.state.expanded["" + index] ? item.content : item.short_content}
+                    stylesheet={styles}
+                />
+                {!this.state.expanded["" + index] &&  <TouchableHighlight onPress={() => {
+                    let expanded = this.state.expanded;
+                    expanded["" + index] = true; //!this.state.expanded["" + index];
+                    this.setState({expanded: expanded});
+                }}>
+                    <View style={{marginTop: 10, borderTopWidth: 2, borderColor: item.color, flexDirection: "row"}}>
+                        <Text style={{marginLeft: "auto"}}>Читать дальше...</Text>
+                    </View>
+                </TouchableHighlight>}
+            </Card>
         )
     }
 
@@ -128,7 +140,7 @@ const styles = StyleSheet.create({
         color: '#FF3366', // make links coloured pink
     },
     title: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: "600"
     },
     date: {

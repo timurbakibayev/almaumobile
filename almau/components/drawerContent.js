@@ -39,33 +39,40 @@ class DrawerContent extends Component {
     render() {
         //console.log(this.props);
         const photoUrl = `${URL}${this.props.userInfo.photo}`;
-        let userRole = this.props.userInfo.role?this.props.userInfo.role:"";
-        userRole = userRole.replace("teacher","Преподаватель");
+        let userRole = this.props.userInfo.role ? this.props.userInfo.role : "";
+        userRole = userRole.replace("teacher", "Преподаватель");
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <View style={styles.photo}>
-                        <View style={{
-                            borderRadius: Dimensions.get('window').height / 14,
-                            width: "100%",
-                            height: "100%",
-                            backgroundColor: "green",
-                            overflow: "hidden",
-                        }}>
-                            <Image
-
-                                style={{
-                                    flex: 1,
-                                    width: "100%",
-                                    height: "100%",
-                                    resizeMode: "cover",
-                                }}
-                                source={{uri: photoUrl}}
-                            />
+                    <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center", margin: "auto", paddingTop: 20, paddingLeft: 10}}>
+                        <View style={styles.photo}>
+                            <View style={{
+                                borderRadius: Dimensions.get('window').height / 18,
+                                width: "100%",
+                                height: "100%",
+                                backgroundColor: "green",
+                                overflow: "hidden",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                margin: "auto",
+                            }}>
+                                <Image
+                                    style={{
+                                        flex: 1,
+                                        width: "100%",
+                                        height: "100%",
+                                        resizeMode: "cover",
+                                    }}
+                                    source={{uri: photoUrl}}
+                                />
+                            </View>
+                        </View>
+                        <View style={styles.inHeader3}>
+                            <Text
+                                style={styles.headerText}>{this.props.userInfo ? this.props.userInfo.fullname : "Loading..."}</Text>
                         </View>
                     </View>
                     <View style={styles.inHeader3}>
-                        <Text style={styles.headerText}>{this.props.userInfo?this.props.userInfo.fullname:"Loading..."}</Text>
                         <Text style={styles.headerText}>{userRole}</Text>
                     </View>
                 </View>
@@ -73,42 +80,48 @@ class DrawerContent extends Component {
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('news');
                     }}>
-                        <View style={{flexDirection:"row"}}>
-                            <Icon style={styles.menuItemText} name="feed" /><Text style={styles.menuItemText}>Новости</Text>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="feed"/><Text
+                            style={styles.menuItemText}>Новости</Text>
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('announcements');
                     }}>
-                        <View style={{flexDirection:"row"}}>
-                            <Icon style={styles.menuItemText} name="newspaper-o" /><Text style={styles.menuItemText}>Объявления</Text>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="newspaper-o"/><Text
+                            style={styles.menuItemText}>Объявления</Text>
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('database');
                     }}>
-                        <View style={{flexDirection:"row"}}>
-                            <Icon style={styles.menuItemText} name="eercast" /><Text style={styles.menuItemText}>База знаний</Text>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="eercast"/><Text style={styles.menuItemText}>База
+                            знаний</Text>
                         </View>
 
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('ombudsman');
                     }}>
-                        <View style={{flexDirection:"row"}}>
-                            <Icon style={styles.menuItemText} name="handshake-o" /><Text style={styles.menuItemText}>Омбудсмен</Text>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="handshake-o"/><Text
+                            style={styles.menuItemText}>Омбудсмен</Text>
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('instructions');
                     }}>
-                        <View style={{flexDirection:"row"}}>
-                            <Icon style={styles.menuItemText} name="rocket" /><Text style={styles.menuItemText}>API</Text>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="rocket"/><Text
+                            style={styles.menuItemText}>API</Text>
                         </View>
                     </TouchableHighlight>
                 </View>
             </View>
-        );
+        )
+            ;
     }
 
 }
@@ -122,19 +135,20 @@ styles = {
         alignItems: 'center',
     },
     header: {
-        height: Dimensions.get('window').height / 3,
+        height: Dimensions.get('window').height / 3.5,
         width: "100%",
         backgroundColor: "#ff4466",
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         padding: "1%",
     },
     photo: {
-        width: Dimensions.get('window').height / 7,
-        height: Dimensions.get('window').height / 7,
+        width: Dimensions.get('window').height / 9,
+        height: Dimensions.get('window').height / 9,
         justifyContent: "center",
         alignItems: "center",
+        margin: "auto",
     },
     inHeader3: {
         flex: 1,
@@ -146,10 +160,9 @@ styles = {
     headerText: {
         fontSize: 20,
         fontWeight: '300',
-        paddingTop: 20,
         color: "white",
         textAlign: "center",
-        margin: 20,
+        margin: 5,
     },
     menuItem: {
         margin: 10,
