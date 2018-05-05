@@ -11,6 +11,7 @@ import AuthenticateScreen from './screens/authenticate';
 import NotImplementedScreen from './screens/notImplemented';
 import WelcomeScreen from './screens/welcome';
 import NewsScreen from './screens/news';
+import DisciplinesScreen from './screens/disciplines';
 import AnnouncementsScreen from './screens/announcements';
 import DatabaseScreen from './screens/database';
 import OmbudsmanScreen from './screens/ombudsman';
@@ -20,6 +21,21 @@ import MainMenu from './components/mainMenu';
 
 export default class App extends React.Component {
     render() {
+        const DisciplinesScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: DisciplinesScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'disciplines',
+                    headerMode: 'screen',
+                    headerTitle: 'Дисциплины',
+                }),
+            }
+        );
+
         const NewsScreenStack = StackNavigator(
             {
                 MainScreen: {
@@ -85,6 +101,7 @@ export default class App extends React.Component {
             instructions: { screen: InstructionsScreen},
             authenticate: { screen: AuthenticateScreen},
             news: { screen: NewsScreenStack},
+            disciplines: { screen: DisciplinesScreenStack},
             announcements: { screen: AnnouncementsScreenStack},
             database: { screen: DBScreenStack},
             ombudsman: { screen: OmbudsmanScreenStack},

@@ -94,6 +94,14 @@ class DrawerContent extends Component {
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.menuItem} onPress={() => {
+                        this.props.navigation.navigate('disciplines');
+                    }}>
+                        <View style={{flexDirection: "row"}}>
+                            <Icon style={styles.menuItemText} name="newspaper-o"/><Text
+                            style={styles.menuItemText}>Дисциплины</Text>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight style={styles.menuItem} onPress={() => {
                         this.props.navigation.navigate('database');
                     }}>
                         <View style={{flexDirection: "row"}}>

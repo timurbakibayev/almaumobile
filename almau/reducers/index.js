@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import { DATA_AVAILABLE } from "../actions/"
 import { USER_INFO_LOADED } from "../actions/userInfo"
 import { NEWS_LOADED } from "../actions/news"
+import { DISCIPLINES_LOADED } from "../actions/disciplines"
 import { ANNOUNCEMENTS_LOADED } from "../actions/announcements"
 import { DB_LOADED } from "../actions/database"
 
@@ -37,6 +38,15 @@ const newsReducer = (state = [], action) => {
     }
 };
 
+const disciplinesReducer = (state = [], action) => {
+    switch (action.type) {
+        case DISCIPLINES_LOADED:
+            return action.data;
+        default:
+            return state;
+    }
+};
+
 const announcementsReducer = (state = [], action) => {
     switch (action.type) {
         case ANNOUNCEMENTS_LOADED:
@@ -62,6 +72,7 @@ const rootReducer = combineReducers({
     dataReducer,
     userInfoReducer,
     newsReducer,
+    disciplinesReducer,
     announcementsReducer,
     dbReducer,
 });

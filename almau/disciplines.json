@@ -1,0 +1,282 @@
+[
+  {
+    "tutorid": 27,
+    "subjectid": 211,
+    "StudyGroupID": 21960,
+    "subject": {
+      "SubjectID": 211,
+      "SubjectNameRU": "\u041e\u0441\u043d\u043e\u0432\u044b \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c"
+    },
+    "students": [
+      {
+        "groupid": 829,
+        "pivot": {
+          "studyGroupID": 21960,
+          "StudentID": 16490
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 214,
+    "StudyGroupID": 24330,
+    "subject": {
+      "SubjectID": 214,
+      "SubjectNameRU": "\u0411\u0430\u0437\u044b \u0434\u0430\u043d\u043d\u044b\u0445 \u0432 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c\u0430\u0445"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 1231,
+    "StudyGroupID": 24644,
+    "subject": {
+      "SubjectID": 1231,
+      "SubjectNameRU": "\u0410\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u044b, \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435"
+    },
+    "students": [
+      {
+        "groupid": 880,
+        "pivot": {
+          "studyGroupID": 24644,
+          "StudentID": 17079
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 1746,
+    "StudyGroupID": 22521,
+    "subject": {
+      "SubjectID": 1746,
+      "SubjectNameRU": "\u041f\u0440\u0435\u0434\u0434\u0438\u043f\u043b\u043e\u043c\u043d\u0430\u044f \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430"
+    },
+    "students": [
+      {
+        "groupid": 347,
+        "pivot": {
+          "studyGroupID": 22521,
+          "StudentID": 4750
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 1761,
+    "StudyGroupID": 19234,
+    "subject": {
+      "SubjectID": 1761,
+      "SubjectNameRU": "\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430"
+    },
+    "students": [
+      {
+        "groupid": 779,
+        "pivot": {
+          "studyGroupID": 19234,
+          "StudentID": 16507
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 1802,
+    "StudyGroupID": 21944,
+    "subject": {
+      "SubjectID": 1802,
+      "SubjectNameRU": "\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430"
+    },
+    "students": [
+      {
+        "groupid": 797,
+        "pivot": {
+          "studyGroupID": 21944,
+          "StudentID": 16028
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 1845,
+    "StudyGroupID": 24309,
+    "subject": {
+      "SubjectID": 1845,
+      "SubjectNameRU": "\u041e\u0441\u043d\u043e\u0432\u044b \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u043e\u0433\u043e \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f"
+    },
+    "students": [
+      {
+        "groupid": 881,
+        "pivot": {
+          "studyGroupID": 24309,
+          "StudentID": 17336
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 2428,
+    "StudyGroupID": 24144,
+    "subject": {
+      "SubjectID": 2428,
+      "SubjectNameRU": "\u042d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u0430\u043a\u0442\u0443\u0430\u0440\u043d\u043e\u0439 \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0438"
+    },
+    "students": [
+      {
+        "groupid": 14,
+        "pivot": {
+          "studyGroupID": 24144,
+          "StudentID": 5467
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 2429,
+    "StudyGroupID": 22145,
+    "subject": {
+      "SubjectID": 2429,
+      "SubjectNameRU": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0432 \u0444\u0438\u043d\u0430\u043d\u0441\u0430\u0445"
+    },
+    "students": [
+      {
+        "groupid": 688,
+        "pivot": {
+          "studyGroupID": 22145,
+          "StudentID": 5788
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 2567,
+    "StudyGroupID": 22246,
+    "subject": {
+      "SubjectID": 2567,
+      "SubjectNameRU": "\u0420\u043e\u0431\u043e\u0442\u043e\u0442\u0435\u0445\u043d\u0438\u043a\u0430"
+    },
+    "students": [
+      {
+        "groupid": 637,
+        "pivot": {
+          "studyGroupID": 22246,
+          "StudentID": 15866
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3808,
+    "StudyGroupID": 24647,
+    "subject": {
+      "SubjectID": 3808,
+      "SubjectNameRU": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435 Java SE"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3811,
+    "StudyGroupID": 24657,
+    "subject": {
+      "SubjectID": 3811,
+      "SubjectNameRU": "\u041e\u0441\u043d\u043e\u0432\u044b \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u043e\u0439 \u0433\u0440\u0430\u0444\u0438\u043a\u0438"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3813,
+    "StudyGroupID": 24645,
+    "subject": {
+      "SubjectID": 3813,
+      "SubjectNameRU": "Microsoft Server SQL \u0437\u0430\u043f\u0440\u043e\u0441\u044b"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3839,
+    "StudyGroupID": 24637,
+    "subject": {
+      "SubjectID": 3839,
+      "SubjectNameRU": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0432 \u0431\u0438\u0437\u043d\u0435\u0441\u0435"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3840,
+    "StudyGroupID": 22524,
+    "subject": {
+      "SubjectID": 3840,
+      "SubjectNameRU": "\u0418\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u0430\u044f \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f \u043d\u0430 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435 Arduino"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3842,
+    "StudyGroupID": 24643,
+    "subject": {
+      "SubjectID": 3842,
+      "SubjectNameRU": "\u0421\u0435\u0442\u0438 \u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0435\u0439"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 3991,
+    "StudyGroupID": 24329,
+    "subject": {
+      "SubjectID": 3991,
+      "SubjectNameRU": "\u041e\u0431\u044a\u0435\u043a\u0442\u043d\u043e-\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0435 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u044f\u0437\u044b\u043a\u0435 Java"
+    },
+    "students": []
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 4111,
+    "StudyGroupID": 27010,
+    "subject": {
+      "SubjectID": 4111,
+      "SubjectNameRU": "\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u044b\u0435 \u0441\u0435\u0442\u0438, \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0438 \u043c\u0443\u043b\u044c\u0442\u0438\u043c\u0435\u0434\u0438\u0430 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438"
+    },
+    "students": [
+      {
+        "groupid": 971,
+        "pivot": {
+          "studyGroupID": 27010,
+          "StudentID": 17946
+        },
+        "group": null
+      }
+    ]
+  },
+  {
+    "tutorid": 27,
+    "subjectid": 4641,
+    "StudyGroupID": 27588,
+    "subject": {
+      "SubjectID": 4641,
+      "SubjectNameRU": "\u0424\u0438\u0437\u0438\u043a\u0430 2"
+    },
+    "students": []
+  }
+]
