@@ -18,7 +18,11 @@
     },
     {
       "title": "Дисциплины",
-      "description": "GET: http://almaunion.almau.edu.kz/disciplines/all , 500 Internal Server Error"
+      "description": "GET: http://almaunion.almau.edu.kz/disciplines/all"
+    },
+    {
+      "title": "Расписание",
+      "description": "GET: http://almaunion.almau.edu.kz/schedule/my (schedule.json)"
     },
     {
       "title": "База знаний",
