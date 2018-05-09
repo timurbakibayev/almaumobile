@@ -22,15 +22,17 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import * as Actions from '../actions/disciplines';
 import Slides from '../components/slides';
 import {URL} from '../api/url';
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
-
+import icons from '../icons.json';
 
 class Disciplines extends Component {
     constructor(props) {
         super(props);
         this.state = {
             expanded: {a1: false,},
+            imageUrl: {a1: false,},
         };
     }
 
@@ -43,19 +45,49 @@ class Disciplines extends Component {
     };
 
     renderSingleDisciplines({item, index}) {
+        let sum = 0;
+        item.subject.SubjectNameRU.split('').forEach(function (alphabet) {
+            sum += alphabet.charCodeAt(0);
+        });
+        let random = ((sum % 100) / 100);
+        let color = "#" + ('00000' + (random * (1 << 24) | 0).toString(16)).slice(-6);
+        const iconName = icons[sum % icons.length].name;
+        let icon = (
+            <View style={{
+                backgroundColor: color,
+                alignItems: "center", alignContent: "center", height: 40, width: 40,
+                justifyContent: "space-around",
+                borderRadius: 20,
+            }}>
+                <Icon style={{color: "white", fontSize: 25, fontWeight: 600}} name={iconName}/>
+            </View>
+        );
         return (
-            <Card key={index}
-                  style={{flexDirection: "column", flex: 1, left: 1, overflow: "hidden"}}
+            <Card key={item.subjectid + item.StudyGroupID}
             >
-                <TouchableHighlight onPress={() => {
-                    let expanded = this.state.expanded;
-                    expanded["" + index] = true; //!this.state.expanded["" + index];
-                    this.setState({expanded: expanded});
-                }}>
-                    <Text style={styles.title}>{item.subject.SubjectNameRU}</Text>
-                </TouchableHighlight>
-                <Text style={styles.date}>{item.subject.SubjectID}</Text>
-                <Text style={styles.title}></Text>
+                <View style={{flexDirection: "row", flex: 1, minHeight: 80}}>
+                    <View style={{width: 50}}>
+                        {icon}
+                    </View>
+                    <View style={{flex: 1}}>
+                        <TouchableHighlight onPress={() => {
+                            let expanded = this.state.expanded;
+                            expanded["" + index] = true; //!this.state.expanded["" + index];
+                            this.setState({expanded: expanded});
+                        }}>
+                            <Text style={styles.title}>{item.subject.SubjectNameRU}</Text>
+                        </TouchableHighlight>
+                        <Text style={styles.date}>{item.students.length} {
+                            (item.students.length % 10) === 1 ? "студент" :
+                                ([2, 3].includes(item.students.length % 10) ?
+                                        "студента" : "студентов"
+                                )
+                        }</Text>
+                        {item.files.map((file) => (
+                            <HTMLView key={file.id} value={"<a " + file.filename + "'>"+file.description+"</a>"}/>
+                        ))}
+                    </View>
+                </View>
             </Card>
         )
     }
@@ -64,15 +96,15 @@ class Disciplines extends Component {
     render() {
         // console.log("Disciplines:", this.props.disciplines);
         return (
-            this.props.disciplines.data ? (<View
+            this.props.disciplines ? (<View
                     style={{flex: 1, backgroundColor: '#FAFAFA', paddingTop: 0, alignItems: "center"}}>
                     <FlatList
-                        containerStyle={{ marginTop: 0, borderTopWidth: 0, borderBottomWidth: 0 }}
+                        containerStyle={{marginTop: 0, borderTopWidth: 0, borderBottomWidth: 0}}
                         style={{width: SCREEN_WIDTH}}
                         ref='listRef'
-                        data={this.props.disciplines.data}
+                        data={this.props.disciplines}
                         renderItem={this.renderSingleDisciplines.bind(this)}
-                        keyExtractor={(item, index) => item.id}/>
+                        keyExtractor={(item, index) => item.subjectid + item.StudyGroupID}/>
                 </View>)
                 : <View style={styles.activityIndicatorContainer}>
                     <ActivityIndicator animating={true}/>

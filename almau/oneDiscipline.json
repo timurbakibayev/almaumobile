@@ -1,0 +1,120 @@
+{
+  "subject": {
+    "SubjectID": 211,
+    "SubjectNameRU": "\u041e\u0441\u043d\u043e\u0432\u044b \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c",
+    "exercises": [
+      {
+        "id": 98,
+        "subject_id": 211,
+        "title": "\u0417\u0430\u0434\u0430\u0447\u0438 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438",
+        "answers": null,
+        "all_answers": [],
+        "get_groups": [
+          {
+            "discipline_exercise_id": 98,
+            "groupID": 797,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 98,
+            "groupID": 829,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 98,
+            "groupID": 881,
+            "date": "2017-10-29"
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "subject_id": 211,
+        "title": "\u0417\u0430\u0434\u0430\u0447\u0438 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u043a\u043e\u0434\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f",
+        "answers": null,
+        "all_answers": [],
+        "get_groups": [
+          {
+            "discipline_exercise_id": 99,
+            "groupID": 797,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 99,
+            "groupID": 829,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 99,
+            "groupID": 881,
+            "date": "2017-10-29"
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "subject_id": 211,
+        "title": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c\u043d\u044b\u0435 \u0443\u0447\u0435\u0431\u043d\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+        "answers": null,
+        "all_answers": [],
+        "get_groups": [
+          {
+            "discipline_exercise_id": 100,
+            "groupID": 797,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 100,
+            "groupID": 829,
+            "date": "2017-10-29"
+          },
+          {
+            "discipline_exercise_id": 100,
+            "groupID": 881,
+            "date": "2017-10-29"
+          }
+        ]
+      }
+    ]
+  },
+  "types": [
+    {
+      "title": "\u0421\u0438\u043b\u043b\u0430\u0431\u0443\u0441",
+      "name": "sillabus"
+    },
+    {
+      "title": "\u041c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b",
+      "name": "teaching_materials"
+    }
+  ],
+  "items": {
+    "teaching_materials": [
+      {
+        "id": "AV9dHjJvU-mtml6e4Wnt",
+        "user_id": 29,
+        "created_at": "2017-10-18 02:30:01",
+        "title": "\u0412\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0432 \u0434\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0443 \" \u041e\u0441\u043d\u043e\u0432\u044b \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c\"",
+        "status": 1,
+        "type": "teaching_materials"
+      },
+      {
+        "id": "AV9dHjJvU-mtml6e4Wnu",
+        "user_id": 29,
+        "created_at": "2017-10-18 02:55:39",
+        "title": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u0439 \u0443\u0447\u0435\u0431\u043d\u0438\u043a \u043f\u043e \u0434\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0435",
+        "status": 1,
+        "type": "teaching_materials"
+      }
+    ],
+    "sillabus": [
+      {
+        "id": "AV9dHRyVU-mtml6e4WjL",
+        "user_id": 29,
+        "created_at": "2017-10-18 02:54:46",
+        "title": "\u0421\u0438\u043b\u043b\u0430\u0431\u0443\u0441 \u0434\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u044b",
+        "status": 1,
+        "type": "sillabus"
+      }
+    ]
+  }
+}

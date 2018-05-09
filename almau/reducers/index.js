@@ -4,6 +4,7 @@ import { DATA_AVAILABLE } from "../actions/"
 import { USER_INFO_LOADED } from "../actions/userInfo"
 import { NEWS_LOADED } from "../actions/news"
 import { DISCIPLINES_LOADED } from "../actions/disciplines"
+import { SCHEDULE_LOADED } from "../actions/schedule"
 import { ANNOUNCEMENTS_LOADED } from "../actions/announcements"
 import { DB_LOADED } from "../actions/database"
 
@@ -47,6 +48,15 @@ const disciplinesReducer = (state = [], action) => {
     }
 };
 
+const scheduleReducer = (state = [], action) => {
+    switch (action.type) {
+        case SCHEDULE_LOADED:
+            return action.data;
+        default:
+            return state;
+    }
+};
+
 const announcementsReducer = (state = [], action) => {
     switch (action.type) {
         case ANNOUNCEMENTS_LOADED:
@@ -73,6 +83,7 @@ const rootReducer = combineReducers({
     userInfoReducer,
     newsReducer,
     disciplinesReducer,
+    scheduleReducer,
     announcementsReducer,
     dbReducer,
 });

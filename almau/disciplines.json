@@ -15,6 +15,22 @@
           "StudentID": 16490
         },
         "group": null
+      },
+      {
+        "groupid": 829,
+        "pivot": {
+          "studyGroupID": 21960,
+          "StudentID": 16490
+        },
+        "group": null
+      },
+      {
+        "groupid": 829,
+        "pivot": {
+          "studyGroupID": 21960,
+          "StudentID": 16490
+        },
+        "group": null
       }
     ]
   },

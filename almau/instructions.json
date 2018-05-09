@@ -46,7 +46,7 @@
     },
     {
       "title": "Дисциплины",
-      "description": "http://almaunion.almau.edu.kz/disciplines/all (disciplines.json)"
+      "description": "http://almaunion.almau.edu.kz/disciplines/all (disciplines.json) One discipline: http://almaunion.almau.edu.kz/disciplines/211/info/teacher (oneDiscipline.json) To get each item: follow http://almaunion.almau.edu.kz/database/view/sillabus/AV9dHRyVU-mtml6e4WjL (sillabus.json) and find a string with 'download' there"
     },
     {
       "title": "Омбудсмен",

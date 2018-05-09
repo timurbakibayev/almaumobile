@@ -15,12 +15,28 @@ import DisciplinesScreen from './screens/disciplines';
 import AnnouncementsScreen from './screens/announcements';
 import DatabaseScreen from './screens/database';
 import OmbudsmanScreen from './screens/ombudsman';
+import ScheduleScreen from './screens/schedule';
 
 import MainMenu from './components/mainMenu';
 
 
 export default class App extends React.Component {
     render() {
+        const ScheduleScreenStack = StackNavigator(
+            {
+                MainScreen: {
+                    screen: ScheduleScreen,
+                }
+            },
+            {
+                navigationOptions: ({ navigation }) => ({
+                    initialRouteName: 'schedule',
+                    headerMode: 'screen',
+                    headerTitle: 'Расписание',
+                }),
+            }
+        );
+
         const DisciplinesScreenStack = StackNavigator(
             {
                 MainScreen: {
@@ -102,6 +118,7 @@ export default class App extends React.Component {
             authenticate: { screen: AuthenticateScreen},
             news: { screen: NewsScreenStack},
             disciplines: { screen: DisciplinesScreenStack},
+            schedule: { screen: ScheduleScreenStack},
             announcements: { screen: AnnouncementsScreenStack},
             database: { screen: DBScreenStack},
             ombudsman: { screen: OmbudsmanScreenStack},
